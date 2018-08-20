@@ -7,8 +7,7 @@ var url = Url.parse(undefined, "http://example.com/whatever/?qs=32#searchit");
 
 console.log(url);
 
-var query = url.query;
+console.log(Url.stringify(url));
 
 exports.url = url;
-exports.query = query;
 /* url Not a pure module */

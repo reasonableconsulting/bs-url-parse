@@ -13,6 +13,11 @@ function parse(base, path) {
   }
 }
 
+function stringify(url) {
+  return url.toString();
+}
+
 exports.Internal = Internal;
 exports.parse = parse;
+exports.stringify = stringify;
 /* url-parse Not a pure module */

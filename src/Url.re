@@ -20,6 +20,8 @@ module Internal = {
   external parseWithBase: (string, string, bool) => t = "url-parse";
 
   [@bs.module] [@bs.new] external parse: (string, bool) => t = "url-parse";
+
+  [@bs.send] external toString: t => string = "";
 };
 
 /* TODO: Not exposing querystring parsing because I'm not sure how to express that type */
@@ -28,3 +30,5 @@ let parse = (~base=?, path) =>
   | Some(base) => Internal.parseWithBase(path, base, false)
   | None => Internal.parse(path, false)
   };
+
+let stringify = url => Internal.toString(url);
